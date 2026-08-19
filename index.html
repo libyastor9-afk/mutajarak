@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>متجرك — منصة التجارة</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f6f8fc;color:#101828}button,input,select{font:inherit}button{cursor:pointer}
+.hidden{display:none!important}.app{min-height:100vh}.top{height:70px;background:#fff;border-bottom:1px solid #e7ebf2;display:flex;align-items:center;justify-content:space-between;padding:0 5%}.logo{font-size:25px;font-weight:900}.logo i{font-style:normal;color:#3157ff}.toplinks{display:flex;gap:20px;align-items:center}.toplinks button{background:none;border:0;color:#667085}.btn{border:0;border-radius:11px;padding:11px 18px;font-weight:700}.primary{background:#3157ff;color:#fff}.light{background:#eef2f7;color:#344054}
+.screen{max-width:1180px;margin:auto;padding:42px 5%}.center{min-height:calc(100vh - 70px);display:flex;align-items:center;justify-content:center}.auth{width:min(460px,100%);background:#fff;border:1px solid #e5e9f0;border-radius:22px;padding:32px;box-shadow:0 18px 55px #10182810}.auth h1{margin:0 0 8px;font-size:29px}.muted{color:#667085;line-height:1.7}.field{margin:16px 0}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}.field input,.field select{width:100%;padding:13px;border:1px solid #d9dee8;border-radius:11px;outline:none;background:#fff}.field input:focus{border-color:#3157ff}.full{width:100%;margin-top:8px}.switch{text-align:center;margin-top:18px;font-size:13px;color:#667085}.switch a{color:#3157ff;font-weight:700;cursor:pointer}.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}.choice{border:1px solid #e1e6ef;background:#fff;border-radius:17px;padding:24px;text-align:right}.choice:hover{border-color:#3157ff}.emoji{font-size:30px;margin-bottom:12px}.choice b{display:block;margin-bottom:7px}.choice span{font-size:12px;color:#98a2b3;line-height:1.6}
+.market-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:25px}.market-head h1{margin:0;font-size:32px}.search{width:310px;padding:13px 16px;border:1px solid #dce1ea;border-radius:12px;background:#fff}.chips{display:flex;gap:8px;overflow:auto;margin-bottom:24px}.chip{border:1px solid #dfe4ec;background:#fff;padding:9px 14px;border-radius:999px;white-space:nowrap}.chip.active{background:#3157ff;color:#fff;border-color:#3157ff}.stores{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.store{background:#fff;border:1px solid #e5e9f0;border-radius:18px;padding:18px}.store-banner{height:110px;border-radius:13px;background:#eef2ff;margin-bottom:15px}.storeline{display:flex;align-items:center;gap:10px}.avatar{width:42px;height:42px;border-radius:12px;background:#dfe5ff;display:grid;place-items:center;font-weight:900}.verified{font-size:11px;color:#3157ff}.store p{font-size:12px;color:#667085;line-height:1.6}.store .row{display:flex;justify-content:space-between;align-items:center}.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}.product-card{background:#fff;border:1px solid #e5e9f0;border-radius:16px;padding:12px}.product-img{height:150px;border-radius:12px;background:#eef1f6;display:grid;place-items:center;font-size:38px}.product-card h3{font-size:14px;margin:12px 0 6px}.price{font-weight:900}.product-card small{color:#98a2b3}
+.dashboard-layout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 70px)}.side{background:#fff;border-left:1px solid #e7ebf2;padding:24px 15px}.side h3{padding:0 12px 18px}.side button{width:100%;border:0;background:none;text-align:right;padding:12px;border-radius:10px;color:#667085;margin:2px 0}.side button.active,.side button:hover{background:#eef2ff;color:#3157ff;font-weight:700}.dash{padding:35px 4%}.dashhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.dashhead h1{margin:0;font-size:28px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{background:#fff;border:1px solid #e5e9f0;border-radius:15px;padding:18px}.stat small{color:#98a2b3}.stat strong{display:block;font-size:25px;margin-top:10px}.panel{background:#fff;border:1px solid #e5e9f0;border-radius:17px;margin-top:18px;padding:20px}.panel-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-weight:800}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:right;padding:13px 8px;border-bottom:1px solid #eef1f5;font-size:13px}.badge{font-size:11px;background:#ecfdf3;color:#027a48;border-radius:999px;padding:6px 9px}.modal-bg{position:fixed;inset:0;background:#10182888;display:flex;align-items:center;justify-content:center;padding:20px}.modal{width:min(520px,100%);background:#fff;border-radius:20px;padding:25px}.modal h2{margin-top:0}.modal-actions{display:flex;gap:9px;justify-content:flex-start;margin-top:18px}
+@media(max-width:850px){.stores{grid-template-columns:1fr 1fr}.products-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.dashboard-layout{grid-template-columns:1fr}.side{display:none}.market-head{align-items:stretch;flex-direction:column}.search{width:100%}}
+@media(max-width:520px){.choice-grid,.stores,.products-grid{grid-template-columns:1fr}.toplinks{display:none}.screen{padding:30px 5%}}
+</style>
+</head>
+<body>
+<div id="root"><div style="padding:40px;font-family:Arial;text-align:center">جاري تحميل المنصة...</div></div>
+<noscript><div style="padding:40px;font-family:Arial;text-align:center">يجب تفعيل JavaScript لعرض المنصة.</div></noscript>
+
+<script>
+window.addEventListener("error", function(e){
+  const root = document.getElementById("root");
+  if(root && !root.innerHTML.trim()) {
+    root.innerHTML = '<div style="padding:40px;font-family:Arial;text-align:center;direction:rtl"><h2>حدث خطأ أثناء تشغيل الصفحة</h2><p>جرّب فتح الملف في Chrome أو Firefox.</p></div>';
+  }
+});
+const root=document.getElementById('root');
+let current='landing';
+let products=[
+ {name:'سماعة لاسلكية',price:89,icon:'🎧',stock:12},
+ {name:'اشتراك رقمي',price:25,icon:'🎮',stock:99},
+ {name:'إكسسوار هاتف',price:35,icon:'📱',stock:31},
+ {name:'كيبورد ميكانيكي',price:180,icon:'⌨️',stock:8}
+];
+
+function top(){
+return `<header class="top"><div class="logo">متجر<i>ك</i></div>
+<div class="toplinks"><button onclick="show('market')">المتاجر</button><button onclick="show('login')">تسجيل الدخول</button><button class="btn primary" onclick="show('role')">ابدأ الآن</button></div></header>`;
+}
+function show(page){current=page;render()}
+function render(){
+if(current==='landing') root.innerHTML=landing();
+if(current==='role') root.innerHTML=top()+role();
+if(current==='registerPersonal') root.innerHTML=top()+register(false);
+if(current==='registerBusiness') root.innerHTML=top()+register(true);
+if(current==='login') root.innerHTML=top()+login();
+if(current==='market') root.innerHTML=top()+market();
+if(current==='store') root.innerHTML=top()+store();
+if(current==='business') root.innerHTML=top()+business();
+}
+function landing(){return top()+`<main class="screen center"><div style="max-width:850px;text-align:center">
+<div style="display:inline-block;background:#eef2ff;color:#3157ff;padding:9px 14px;border-radius:999px;font-weight:700;font-size:13px">منصة واحدة للتجارة والتسوق</div>
+<h1 style="font-size:clamp(42px,7vw,75px);line-height:1.08;margin:22px 0">متجرك يبدأ<br>من <span style="color:#3157ff">هنا.</span></h1>
+<p class="muted" style="font-size:18px">أنشئ متجرك واعرض منتجاتك، أو اكتشف متاجر ومنتجات جديدة من مكان واحد.</p>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:28px;flex-wrap:wrap"><button class="btn primary" onclick="show('role')">ابدأ الآن</button><button class="btn light" onclick="show('market')">تصفح المتاجر</button></div>
+</div></main>`}
+function role(){return `<main class="screen center"><div class="auth" style="width:min(650px,100%)"><h1>اختر نوع حسابك</h1><p class="muted">حدد طريقة استخدامك للمنصة، ويمكنك تغيير بعض الإعدادات لاحقًا.</p><div class="choice-grid">
+<button class="choice" onclick="show('registerPersonal')"><div class="emoji">👤</div><b>استخدام شخصي</b><span>أتصفح المتاجر وأشتري المنتجات وأتابع طلباتي.</span></button>
+<button class="choice" onclick="show('registerBusiness')"><div class="emoji">🏪</div><b>استخدام تجاري</b><span>أنشئ متجرًا وأدير المنتجات والطلبات والعملاء.</span></button></div></div></main>`}
+function register(business){return `<main class="screen center"><div class="auth"><h1>${business?'إنشاء حساب تجاري':'إنشاء حساب'}</h1><p class="muted">أنشئ حسابك للبدء.</p>
+<div class="field"><label>الاسم</label><input id="name" placeholder="اكتب اسمك"></div>
+<div class="field"><label>البريد الإلكتروني</label><input id="email" type="email" placeholder="name@example.com"></div>
+<div class="field"><label>كلمة المرور</label><input id="pass" type="password" placeholder="••••••••"></div>
+${business?`<div class="field"><label>اسم المتجر</label><input id="shop" placeholder="مثال: ليبيا ستور"></div>`:''}
+<button class="btn primary full" onclick="${business?'createBusiness()':'createPersonal()'}">إنشاء الحساب</button>
+<div class="switch">لديك حساب؟ <a onclick="show('login')">تسجيل الدخول</a></div></div></main>`}
+function login(){return `<main class="screen center"><div class="auth"><h1>مرحبًا بعودتك 👋</h1><p class="muted">سجل الدخول إلى حسابك.</p><div class="field"><label>البريد الإلكتروني</label><input id="email" type="email" placeholder="name@example.com"></div><div class="field"><label>كلمة المرور</label><input id="pass" type="password" placeholder="••••••••"></div><button class="btn primary full" onclick="show('market')">تسجيل الدخول</button><div class="switch">ليس لديك حساب؟ <a onclick="show('role')">إنشاء حساب</a></div></div></main>`}
+function market(){return `<main class="screen"><div class="market-head"><div><h1>اكتشف المتاجر</h1><p class="muted">تسوق من متاجر متنوعة في مكان واحد.</p></div><input class="search" placeholder="🔎 ابحث عن متجر أو منتج"></div>
+<div class="chips"><button class="chip active">الكل</button><button class="chip">إلكترونيات</button><button class="chip">ألعاب</button><button class="chip">ملابس</button><button class="chip">خدمات رقمية</button></div>
+<div class="stores">${['Tech Libya','Libya Games','متجر الأناقة'].map((x,i)=>`<div class="store"><div class="store-banner"></div><div class="storeline"><div class="avatar">${x[0]}</div><div><b>${x}</b><div class="verified">✓ متجر موثّق</div></div></div><p>متجر متنوع يقدم منتجات وخدمات بجودة عالية.</p><div class="row"><span>⭐ 4.${8-i}</span><button class="btn light" onclick="show('store')">زيارة المتجر</button></div></div>`).join('')}</div></main>`}
+function store(){return `<main class="screen"><div class="panel" style="margin-top:0"><div class="storeline"><div class="avatar" style="width:60px;height:60px">T</div><div><h1 style="margin:0;font-size:27px">Tech Libya <span class="verified">✓ موثّق</span></h1><p class="muted">إلكترونيات وإكسسوارات ومنتجات رقمية.</p></div></div></div><h2 style="margin-top:30px">منتجات المتجر</h2><div class="products-grid">${products.map(p=>`<div class="product-card"><div class="product-img">${p.icon}</div><h3>${p.name}</h3><small>متوفر</small><div style="display:flex;justify-content:space-between;margin-top:10px"><span class="price">${p.price} د.ل</span><button class="btn primary" style="padding:8px 11px" onclick="alert('تمت إضافة المنتج إلى السلة')">أضف</button></div></div>`).join('')}</div></main>`}
+function business(){return `<div class="dashboard-layout"><aside class="side"><h3>🏪 لوحة المتجر</h3><button class="active">📊 الرئيسية</button><button onclick="productsPanel()">📦 المنتجات</button><button>🛒 الطلبات</button><button>💬 الرسائل</button><button>👥 العملاء</button><button>🎨 تخصيص المتجر</button><button>💰 المدفوعات</button><button>⚙️ الإعدادات</button><button onclick="show('market')" style="margin-top:20px">← عرض المنصة</button></aside><section class="dash"><div class="dashhead"><div><h1>مرحبًا بك 👋</h1><p class="muted">هذه نظرة سريعة على متجرك.</p></div><button class="btn primary" onclick="addProduct()">+ منتج جديد</button></div><div class="stats"><div class="stat"><small>المبيعات</small><strong>1,250 د.ل</strong></div><div class="stat"><small>الطلبات</small><strong>24</strong></div><div class="stat"><small>المنتجات</small><strong>${products.length}</strong></div><div class="stat"><small>العملاء</small><strong>315</strong></div></div><div class="panel"><div class="panel-title"><span>آخر الطلبات</span><button class="btn light">عرض الكل</button></div><table class="table"><tr><th>الطلب</th><th>العميل</th><th>المبلغ</th><th>الحالة</th></tr><tr><td>#1024</td><td>محمد</td><td>89 د.ل</td><td><span class="badge">مكتمل</span></td></tr><tr><td>#1023</td><td>أحمد</td><td>180 د.ل</td><td><span class="badge">جديد</span></td></tr><tr><td>#1022</td><td>سالم</td><td>35 د.ل</td><td><span class="badge">مكتمل</span></td></tr></table></div><div class="panel"><div class="panel-title"><span>منتجاتك</span><button class="btn light" onclick="productsPanel()">إدارة المنتجات</button></div><div id="miniProducts">${products.map(p=>`<div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eef1f5;font-size:13px"><span>${p.icon} ${p.name}</span><b>${p.price} د.ل</b></div>`).join('')}</div></div></section></div>`}
+function productsPanel(){document.getElementById('root').innerHTML=top()+`<main class="screen"><div class="dashhead"><div><h1>المنتجات</h1><p class="muted">إضافة وتعديل وإدارة منتجات متجرك.</p></div><button class="btn primary" onclick="addProduct()">+ إضافة منتج</button></div><div class="panel"><table class="table"><tr><th>المنتج</th><th>السعر</th><th>المخزون</th><th>إجراء</th></tr>${products.map((p,i)=>`<tr><td>${p.icon} ${p.name}</td><td>${p.price} د.ل</td><td>${p.stock}</td><td><button class="btn light" onclick="editProduct(${i})">تعديل</button></td></tr>`).join('')}</table></div></main>`}
+function modal(title,body,save){document.body.insertAdjacentHTML('beforeend',`<div class="modal-bg" id="modal"><div class="modal"><h2>${title}</h2>${body}<div class="modal-actions"><button class="btn primary" onclick="${save}">حفظ</button><button class="btn light" onclick="document.getElementById('modal').remove()">إلغاء</button></div></div></div>`)}
+function addProduct(){modal('إضافة منتج',`<div class="field"><label>اسم المنتج</label><input id="pn" placeholder="مثال: سماعة"></div><div class="field"><label>السعر بالدينار</label><input id="pp" type="number" placeholder="0"></div><div class="field"><label>المخزون</label><input id="ps" type="number" placeholder="0"></div>`,'saveProduct()')}
+function saveProduct(){let n=document.getElementById('pn').value||'منتج جديد',p=Number(document.getElementById('pp').value)||0,s=Number(document.getElementById('ps').value)||0;products.push({name:n,price:p,stock:s,icon:'📦'});document.getElementById('modal').remove();show('business')}
+function editProduct(i){let x=products[i];modal('تعديل المنتج',`<div class="field"><label>اسم المنتج</label><input id="pn" value="${x.name}"></div><div class="field"><label>السعر</label><input id="pp" type="number" value="${x.price}"></div><div class="field"><label>المخزون</label><input id="ps" type="number" value="${x.stock}"></div>`,'updateProduct('+i+')')}
+function updateProduct(i){products[i].name=document.getElementById('pn').value;products[i].price=Number(document.getElementById('pp').value);products[i].stock=Number(document.getElementById('ps').value);document.getElementById('modal').remove();productsPanel()}
+function createPersonal(){show('market')}
+function createBusiness(){show('business')}
+render();
+</script>
+</body>
+</html>
