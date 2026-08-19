@@ -79,7 +79,7 @@ function editProduct(i){let x=products[i];modal('تعديل المنتج',`<div 
 function updateProduct(i){products[i].name=document.getElementById('pn').value;products[i].price=Number(document.getElementById('pp').value);products[i].stock=Number(document.getElementById('ps').value);document.getElementById('modal').remove();productsPanel()}
 function createPersonal(){show('market')}
 function createBusiness(){show('business')}
-render();
+render(); alert("JavaScript works");
 </script>
 </body>
 </html>
